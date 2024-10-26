@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sora: 'Sora', sans-serif;
+}
+
+body {
+  font-family: var(--font-sora);
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #1a1a1a 25%,
+    #2d2d2d 50%,
+    #1a1a1a 75%,
+    #000000 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.agent-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.agent-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.agent-card:hover .agent-icon {
+  transform: scale(1.1);
+  color: #000;
+}
+
+/* Marketplace hover effects */
+.marketplace-item {
+  transition: all 0.3s ease;
+}
+
+.marketplace-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(8px);
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  @apply bg-gray-200 h-2 rounded-lg;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  @apply w-6 h-6 bg-black rounded-full cursor-pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply w-6 h-6 bg-black rounded-full cursor-pointer border-0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
